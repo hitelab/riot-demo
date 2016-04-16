@@ -1,5 +1,6 @@
 <sample-linechart>
 <script>
+var file = opts.file;
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 400 - margin.left - margin.right,
     height = 200 - margin.top - margin.bottom;
@@ -26,7 +27,7 @@ var svg = d3.select(this.root).append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.tsv("data/linechart.tsv", type, function(error, data) {
+d3.tsv(file, type, function(error, data) {
   if (error) throw error;
 
   x.domain(d3.extent(data, function(d) { return d.date; }));

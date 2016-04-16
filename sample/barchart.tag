@@ -1,7 +1,7 @@
 <sample-barchart>
 
 <script>
-//console.log(root)
+  var file = opts.file;
   var margin = {top: 20, right: 20, bottom: 30, left: 40},
       width = 400 - margin.left - margin.right,
       height = 200 - margin.top - margin.bottom;
@@ -27,7 +27,7 @@
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  d3.tsv("data/barchart.tsv", type, function(error, data) {
+  d3.tsv(file, type, function(error, data) {
     if (error) throw error;
 
     x.domain(data.map(function(d) { return d.letter; }));

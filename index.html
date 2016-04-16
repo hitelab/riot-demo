@@ -82,10 +82,10 @@
     })
 
     riot.mount('sample-binary-calculator')
-    riot.mount('sample-barchart')
-    riot.mount('sample-linechart')
-    riot.mount('sample-linechart2')
-    riot.mount('sample-piechart')
+    riot.mount('sample-barchart', {file: "data/barchart.tsv"})
+    riot.mount('sample-linechart', {file: "data/linechart.tsv"})
+    riot.mount('sample-linechart2', {file: "data/linechart-multi.tsv"})
+    riot.mount('sample-piechart', {file: "data/piechart.csv"})
     </script>
 
   </body>

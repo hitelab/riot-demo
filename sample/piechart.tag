@@ -1,6 +1,6 @@
 <sample-piechart>
-  <script>
-
+<script>
+var file = opts.file;
 var width = 300,
     height = 300,
     radius = Math.min(width, height) / 2;
@@ -26,7 +26,7 @@ var svg = d3.select(this.root).append("svg")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("data/piechart.csv", type, function(error, data) {
+d3.csv(file, type, function(error, data) {
   if (error) throw error;
 
   var g = svg.selectAll(".arc")

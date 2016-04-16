@@ -1,6 +1,6 @@
 <sample-linechart2>
   <script>
-
+  var file = opts.file;
   var margin = {top: 20, right: 80, bottom: 30, left: 50},
       width = 800 - margin.left - margin.right,
       height = 300 - margin.top - margin.bottom;
@@ -34,7 +34,7 @@
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  d3.tsv("data/linechart-multi.tsv", function(error, data) {
+  d3.tsv(file, function(error, data) {
     if (error) throw error;
 
     color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
