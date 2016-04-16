@@ -21,16 +21,20 @@
     <br>
     <sample-todo></sample-todo>
     <sample-binary-calculator></sample-binary-calculator>
+    <br><br>
+    <sample-barchart></sample-barchart>
 
     <!-- include the tag -->
     <script type="riot/tag" src="sample/sample.tag"></script>
     <script type="riot/tag" src="sample/tree-selector.tag"></script>
     <script type="riot/tag" src="sample/binary-calculator.tag"></script>
     <script type="riot/tag" src="sample/todo.tag"></script>
+    <script type="riot/tag" src="sample/barchart.tag"></script>
 
     <!-- include riot.js -->
-    <script src="riot-2.3.18/riot+compiler.min.js"></script>
-    <script src="data/china-city.js"></script>
+    <script src="assets/riot-2.3.18/riot+compiler.min.js"></script>
+    <script src="assets/china-city.js"></script>
+    <script src="assets/d3-3.5.6/d3.min.js"></script>
 
     <!-- mount the tag -->
     <script>
@@ -72,6 +76,7 @@
     })
 
     riot.mount('sample-binary-calculator')
+    riot.mount('sample-barchart')
     </script>
 
   </body>
