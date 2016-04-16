@@ -1,0 +1,49 @@
+sample-todo {
+  display: block;
+  max-width: 400px;
+  font-family: 'myriad pro', sans-serif;
+  font-size: 20px;
+  border: 0;
+}
+
+sample-todo form input {
+  font-size: 85%;
+  padding: .4em;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+sample-todo button {
+  background-color: #1FADC5;
+  border: 1px solid rgba(0,0,0,.2);
+  font-size: 75%;
+  color: #fff;
+  padding: .4em 1.2em;
+  border-radius: 2em;
+  cursor: pointer;
+  margin: 0 .23em;
+  outline: none;
+}
+
+sample-todo button[disabled] {
+  background-color: #ddd;
+  color: #aaa;
+}
+
+sample-todo ul {
+  padding: 0;
+}
+
+sample-todo li {
+  list-style-type: none;
+  padding: .2em 0;
+}
+
+sample-todo .completed {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+sample-todo label {
+  cursor: pointer;
+}

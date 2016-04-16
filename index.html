@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Hello Riot.</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=3,user-scalable=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style type="riot"></style>
+    <link rel="stylesheet" href="todo.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.0.5/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script>html5.addElements('todo')</script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- place the custom tag anywhere inside the body -->
+    <sample></sample>
+    <sample-tree-selector id="sample-tree-selector-1"></sample-tree-selector>
+    <br><br>
+    <sample-tree-selector id="sample-tree-selector-2"></sample-tree-selector>
+    <br>
+    <sample-todo></sample-todo>
+    <sample-binary-calculator></sample-binary-calculator>
+
+    <!-- include the tag -->
+    <script type="riot/tag" src="sample.tag"></script>
+    <script type="riot/tag" src="todo.tag"></script>
+
+    <!-- include riot.js -->
+    <script src="riot-2.3.18/riot+compiler.min.js"></script>
+    <script src="data.js"></script>
+
+    <!-- mount the tag -->
+    <script>
+    riot.mount('sample')
+
+    var cities = new city();
+    riot.mount('#sample-tree-selector-1', {
+      items: [{
+        name:'province',
+        selected: '浙江省'
+      },{
+        name:'city',
+        selected: '衢州市'
+      },{
+        name:'area',
+        selected: '江山市'
+      }],
+      data: cities
+    })
+    riot.mount('#sample-tree-selector-2', {
+      items: [{
+        name:'province',
+        selected: '浙江省'
+      },{
+        name:'city',
+        selected: '衢州市'
+      }],
+      data: cities
+    })
+
+    riot.mount('sample-todo', {
+      title: 'I want to behave!',
+      items: [
+        { title: 'Avoid excessive caffeine', done: true },
+        { title: 'Hidden item',  hidden: true },
+        { title: 'Be less provocative'  },
+        { title: 'Be nice to people' }
+      ]
+    })
+
+    riot.mount('sample-binary-calculator')
+    </script>
+
+  </body>
+</html>
