@@ -1,2 +1,2 @@
 # riot-demo
-Demo fro Riot - A React-like user interface micro-library.
+Demo for Riot - A React-like user interface micro-library.
