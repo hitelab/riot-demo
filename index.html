@@ -46,27 +46,27 @@
     <script>
     riot.mount('sample')
 
-    var cities = new city();
+    var cities = cities();
     riot.mount('#sample-tree-selector-1', {
       items: [{
-        name:'province',
-        selected: '浙江省'
+        name:'province'
       },{
-        name:'city',
-        selected: '衢州市'
+        name:'city'
       },{
-        name:'area',
-        selected: '江山市'
+        name:'area'
       }],
       data: cities
     })
     riot.mount('#sample-tree-selector-2', {
       items: [{
         name:'province',
-        selected: '浙江省'
+        value: '330000:浙江省'
       },{
         name:'city',
-        selected: '衢州市'
+        value: '330800:衢州市'
+      },{
+        name:'area',
+        value: '330881:江山市'
       }],
       data: cities
     })

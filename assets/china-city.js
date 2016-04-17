@@ -1,4 +1,4 @@
-function city(){
+function cities(){
 	var data = [
 		'110000:北京市','110100:直辖区','110101:东城区','110102:西城区','110105:朝阳区','110106:丰台区','110107:石景山区','110108:海淀区','110109:门头沟区','110111:房山区','110112:通州区','110113:顺义区','110114:昌平区','110115:大兴区','110116:怀柔区','110117:平谷区','110200:县','110228:密云县','110229:延庆县',
 		'120000:天津市','120100:直辖区','120101:和平区','120102:河东区','120103:河西区','120104:南开区','120105:河北区','120106:红桥区','120110:东丽区','120111:西青区','120112:津南区','120113:北辰区','120114:武清区','120115:宝坻区','120116:滨海新区','120200:县','120221:宁河县','120223:静海县','120225:蓟县',
@@ -39,27 +39,26 @@ function city(){
 	var tempProvinces = [];
 	var tempCities = [];
 	var tempAreas = [];
-	var reProvince=/^[0-9]{2}0{4}$/;//省的格式:前2位为'01~99'，后4位为'0000'  例：010000
-	var reCity=/^[0-9]{4}0{2}$/;//城市的格式:前2位为'01~99',中间2位'01~99',后2位为'00' 例:010100
-	var reArea=/^[0-9]{6}$/;//区的格式:前2位为'01~99',中间2位'01~99',后2位为'01~99' 例:010101
+	var reProvince=/^[0-9]{2}0{4}/;//省的格式:前2位为'01~99'，后4位为'0000'  例：010000
+	var reCity=/^[0-9]{4}0{2}/;//城市的格式:前2位为'01~99',中间2位'01~99',后2位为'00' 例:010100
+	var reArea=/^[0-9]{6}/;//区的格式:前2位为'01~99',中间2位'01~99',后2位为'01~99' 例:010101
 
 	//循环取得的数据，添加到用于存放省、市、区的临时数组中
 	for(var i=0; i<data.length; i++){
-		var tempArr = data[i].split(':');
-		if(reProvince.test(tempArr[0])){
-			tempProvinces.push({'id':tempArr[0],'name':tempArr[1], 'sub':[]});
-		}else if(reCity.test(tempArr[0])){
-			tempCities.push({'id':tempArr[0],'name':tempArr[1], 'sub':[]});
-		}else if(reArea.test(tempArr[0])){
-			tempAreas.push({'id':tempArr[0],'name':tempArr[1], 'towns':[]});
+		if(reProvince.test(data[i])){
+			tempProvinces.push({'info':data[i], 'sub':[]});
+		}else if(reCity.test(data[i])){
+			tempCities.push({'info':data[i], 'sub':[]});
+		}else if(reArea.test(data[i])){
+			tempAreas.push({'info':data[i], 'sub':[]});
 		}
 	}
 
 	//将城市信息添加到对应省份中去
 	for(var i=0; i<tempProvinces.length; i++){
-		var pId = tempProvinces[i].id.substring(0,2);
+		var pId = tempProvinces[i].info.substring(0,2);
 		for(var j=0; j<tempCities.length; j++){
-			if(tempCities[j].id.substring(0,2) == pId){
+			if(tempCities[j].info.substring(0,2) == pId){
 				tempProvinces[i].sub.push(tempCities[j]);
 			}
 		}
@@ -67,9 +66,9 @@ function city(){
 
 	//将区信息添加到对应城市中去
 	for(var i=0; i<tempCities.length; i++){
-		var cId = tempCities[i].id.substring(0,4);
+		var cId = tempCities[i].info.substring(0,4);
 		for(var j=0; j<tempAreas.length; j++){
-			if(tempAreas[j].id.substring(0,4) == cId){
+			if(tempAreas[j].info.substring(0,4) == cId){
 				tempCities[i].sub.push(tempAreas[j]);
 			}
 		}

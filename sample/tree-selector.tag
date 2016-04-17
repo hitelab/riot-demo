@@ -1,6 +1,6 @@
 <sample-tree-selector>
-  <select each={items} if={options.length} name={name} onchange={change}>
-    <option each={options} value={name} selected={name == selected}>{name}</option>
+  <select each={items} if={options.length > 0} name={name} onchange={change}>
+    <option each={options} value={info} selected={info == parent.value}>{info.split(':')[1]}</option>
   </select>
 
   <script>
@@ -10,22 +10,22 @@
       var options = opts.data;
       for(var i=0; i<this.items.length; i++) {
         var item = this.items[i];
-        item.index = i;
         item.options = options;
-        var nextOptions = [];
+        var subOptions = [];
         for(var j=0; j<options.length; j++) {
-          if(options[j].name == item.selected || j == 0) {
-            nextOptions = options[j].sub;
+          if(options[j].info == item.value || j == 0) {
+            subOptions = options[j].sub;
           }
         }
-        options = nextOptions;
+        options = subOptions || [];
       }
     })
 
     change(e) {
-      this.items[e.item.index].selected = e.target.value;
-      for(var i=(e.item.index + 1); i<this.items.length; i++) {
-        this.items[i].selected = '';
+      e.item.value = e.target.value
+      var index = this.items.indexOf(e.item)
+      for(var i=(index + 1); i<this.items.length; i++) {
+        this.items[i].value = '';
       }
     }
   </script>
