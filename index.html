@@ -26,6 +26,8 @@
     <sample-linechart></sample-linechart>
     <sample-linechart2></sample-linechart2>
     <sample-piechart></sample-piechart>
+    <br><br>
+    <sample-map-baidu></sample-map-baidu>
 
     <!-- include the tag -->
     <script type="riot/tag" src="sample/sample.tag"></script>
@@ -36,6 +38,7 @@
     <script type="riot/tag" src="sample/linechart.tag"></script>
     <script type="riot/tag" src="sample/linechart2.tag"></script>
     <script type="riot/tag" src="sample/piechart.tag"></script>
+    <script type="riot/tag" src="sample/map-baidu.tag"></script>
 
     <!-- include riot.js -->
     <script src="assets/riot-2.3.18/riot+compiler.min.js"></script>
@@ -86,6 +89,7 @@
     riot.mount('sample-linechart', {file: "data/linechart.tsv"})
     riot.mount('sample-linechart2', {file: "data/linechart-multi.tsv"})
     riot.mount('sample-piechart', {file: "data/piechart.csv"})
+    riot.mount('sample-map-baidu');
     </script>
 
   </body>
