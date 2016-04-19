@@ -17,7 +17,7 @@
     </td>
   </tr>
   <tr>
-    <td colspan="3">rgb({red}, {green}, {blue})</td>
+    <td colspan="3">rgb({red}, {green}, {blue})&nbsp;&nbsp;{hex().toUpperCase()}</td>
   </tr>
   <tr>
     <td colspan="3" style="height: 40px; background-color: rgb({red}, {green}, {blue});"></td>
@@ -38,6 +38,13 @@
   this.red = opts.red
   this.green = opts.green
   this.blue = opts.blue
+
+  hex() {
+    return "#" +
+    ("0" + parseInt(this.red,10).toString(16)).slice(-2) +
+    ("0" + parseInt(this.green,10).toString(16)).slice(-2) +
+    ("0" + parseInt(this.blue,10).toString(16)).slice(-2);
+  }
   changeRed(e) {
     this.red = e.target.value;
   }
