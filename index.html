@@ -11,23 +11,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script>html5.addElements('todo')</script>
     <![endif]-->
+    <style>
+    .grid-item {
+      float: left;
+      width: 400px;
+      /*height: 300px;*/
+      border: 1px solid hsla(0, 0%, 0%, 0.5);
+      border-radius: 5px;
+      margin: 5px;
+      padding: 5px;
+    }
+    .grid-item-2 {
+      float: left;
+      width: 800px;
+      /*height: 300px;*/
+      /*border: 2px solid hsla(0, 0%, 0%, 0.5);*/
+      border: 1px solid hsla(0, 0%, 0%, 0.5);
+      border-radius: 5px;
+      margin: 5px;
+      padding: 5px;
+    }
+    </style>
   </head>
-  <body>
+  <body class='grid'>
     <!-- place the custom tag anywhere inside the body -->
-    <sample></sample>
+    <sample class="grid-item"></sample>
+
+    <sample-todo class="grid-item"></sample-todo>
+
+    <div class="grid-item">
     <sample-tree-selector id="sample-tree-selector-1"></sample-tree-selector>
     <br><br>
     <sample-tree-selector id="sample-tree-selector-2"></sample-tree-selector>
-    <br>
-    <sample-todo></sample-todo>
-    <sample-binary-calculator></sample-binary-calculator>
-    <br><br>
-    <sample-barchart></sample-barchart>
-    <sample-linechart></sample-linechart>
-    <sample-linechart2></sample-linechart2>
-    <sample-piechart></sample-piechart>
-    <br><br>
-    <sample-map-baidu></sample-map-baidu>
+    </div>
+
+    <sample-binary-calculator class="grid-item"></sample-binary-calculator>
+
+    <sample-barchart class="grid-item"></sample-barchart>
+
+    <sample-linechart class="grid-item"></sample-linechart>
+
+    <sample-linechart2 class="grid-item-2"></sample-linechart2>
+
+    <sample-piechart class="grid-item"></sample-piechart>
+
+    <sample-map-baidu class="grid-item"></sample-map-baidu>
 
     <!-- include the tag -->
     <script type="riot/tag" src="sample/sample.tag"></script>
