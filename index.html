@@ -23,7 +23,7 @@
     }
     .grid-item-2 {
       float: left;
-      width: 800px;
+      width: 820px;
       /*height: 300px;*/
       /*border: 2px solid hsla(0, 0%, 0%, 0.5);*/
       border: 1px solid hsla(0, 0%, 0%, 0.5);
@@ -57,6 +57,8 @@
 
     <sample-map-baidu class="grid-item"></sample-map-baidu>
 
+    <sample-rgb-editor class="grid-item"></sample-rgb-editor>
+
     <!-- include the tag -->
     <script type="riot/tag" src="sample/sample.tag"></script>
     <script type="riot/tag" src="sample/tree-selector.tag"></script>
@@ -67,6 +69,7 @@
     <script type="riot/tag" src="sample/linechart2.tag"></script>
     <script type="riot/tag" src="sample/piechart.tag"></script>
     <script type="riot/tag" src="sample/map-baidu.tag"></script>
+    <script type="riot/tag" src="sample/rgb-editor.tag"></script>
 
     <!-- include riot.js -->
     <script src="assets/riot-2.3.18/riot+compiler.min.js"></script>
@@ -118,6 +121,7 @@
     riot.mount('sample-linechart2', {file: "data/linechart-multi.tsv"})
     riot.mount('sample-piechart', {file: "data/piechart.csv"})
     riot.mount('sample-map-baidu');
+    riot.mount('sample-rgb-editor', {red:0,green:0,blue:0});
     </script>
 
   </body>
