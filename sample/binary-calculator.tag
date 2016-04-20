@@ -38,12 +38,9 @@
 <style scoped>
 .bit {
   float: left;
-  max-width: 10px;
+  max-width: 15px;
   padding-right: 10px;
   border: 1px solid;
-}
-.bit > span {
-  padding-left: 5px;
 }
 </style>
 </sample-binary-calculator>
