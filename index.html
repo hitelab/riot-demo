@@ -36,6 +36,8 @@
   </head>
   <body class='grid'>
     <!-- place the custom tag anywhere inside the body -->
+    <sample-rtmp-publisher id="rtmp-publisher" class="grid-item"></sample-rtmp-publisher>
+    <sample-rtmp-player id="rtmp-player" class="grid-item"></sample-rtmp-player>
     <sample class="grid-item"></sample>
 
     <sample-tree-selector class="grid-item" id="sample-tree-selector-1"></sample-tree-selector>
@@ -68,11 +70,13 @@
     <script type="riot/tag" src="sample/piechart.tag"></script>
     <script type="riot/tag" src="sample/map-baidu.tag"></script>
     <script type="riot/tag" src="sample/rgb-editor.tag"></script>
+    <script type="riot/tag" src="sample/live.tag"></script>
 
     <!-- include riot.js -->
-    <script src="assets/riot-2.3.18/riot+compiler.min.js"></script>
-    <script src="assets/china-city.js"></script>
-    <script src="assets/d3-3.5.6/d3.min.js"></script>
+    <script type="text/javascript" src="assets/riot-2.3.18/riot+compiler.min.js"></script>
+    <script type="text/javascript" src="assets/china-city.js"></script>
+    <script type="text/javascript" src="assets/d3-3.5.6/d3.min.js"></script>
+    <script type="text/javascript" src="assets/live/swfobject.js"></script>
 
     <!-- mount the tag -->
     <script>
@@ -120,6 +124,8 @@
     riot.mount('sample-piechart', {file: "data/piechart.csv"})
     riot.mount('sample-map-baidu');
     riot.mount('sample-rgb-editor', {red:0,green:0,blue:0});
+    riot.mount('sample-rtmp-publisher');
+    riot.mount('sample-rtmp-player');
     </script>
 
   </body>
